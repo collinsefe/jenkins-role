@@ -1,0 +1,14 @@
+---  
+ - name: This will setup a Jenkins CI Server
+   hosts: jenkins-server
+   gather_facts: true
+   become: true
+   become_user: root
+   pre_tasks:
+     - include: java-8.yml
+   vars:
+     jenkins_home: /var/lib/jenkins    
+   roles:
+     - { role: geerlingguy.java, java_packages: 'java-1.8.0-openjdk'}
+     - geerlingguy.jenkins
+     

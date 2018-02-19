@@ -1,0 +1,13 @@
+---
+ - name: "Installing additional applications."
+   apt: pkg={{item}} state=installed
+   with_items:
+     - docker
+     - git
+     - wget
+     - vim
+     - nano
+     - zip
+     - unzip
+     - dnsutils
+     - ntp 
