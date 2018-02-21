@@ -1,7 +1,11 @@
 ---
- - name: "Installing additional applications."
-   apt: pkg={{item}} state=installed
+ - name: install required packages
+   yum: pkg={{item}} state=installed
    with_items:
+     - python2
+     - vim
+     - tmux
+     - mosh
      - docker
      - git
      - wget
@@ -9,5 +13,8 @@
      - nano
      - zip
      - unzip
-     - dnsutils
      - ntp 
+     - ansible
+
+
+

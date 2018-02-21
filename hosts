@@ -1,11 +1,10 @@
-
-
-
 [servers]
 #jenkins-server
-jenkins-server ansible_ssh_host=10.44.74.247 ansible_ssh_user=ec2-user  
-jenkins-server2 ansible_ssh_host=10.44.74.69 ansible_ssh_user=ubuntu
+jenkins-server ansible_ssh_host=10.44.74.207 ansible_ssh_user=ec2-user  
+jenkins-server2 ansible_ssh_host=10.44.74.68 ansible_ssh_user=ubuntu
 #jenkins-server ansible_ssh_host=10.44.74.104 ansible_ssh_user=ubuntu 
+
+ansible_python_interpreter=/usr/bin/python2.7
 
 
  

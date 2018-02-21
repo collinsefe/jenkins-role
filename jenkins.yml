@@ -1,14 +1,38 @@
 ---  
  - name: This will setup a Jenkins CI Server
-   hosts: jenkins-server
+   hosts: jenkins-server2
    gather_facts: true
    become: true
    become_user: root
    pre_tasks:
      - include: java-8.yml
-   vars:
-     jenkins_home: /var/lib/jenkins    
+
+   vars:    
+    jenkins_plugins:
+      - blueocean
+      - ghprb
+      - greenballs
+      - workflow-aggregator
+      - ant
+      - antisamy-markup-formatter
+      - build-timeout
+      - cloudbees-folder
+      - credentials-binding
+      - email-ext
+      - ecs
+      - ecr
+      - git
+      - gradle
+      - ldap
+      - mailer
+      - matrix-auth
+      - pam-auth
+      - pipeline-stage-view
+      - ssh-slaves
+      - subversion
+
+    jenkins_plugin_timeout: 300
+    jenkins_home: /var/lib/jenkins    
    roles:
-     - { role: geerlingguy.java, java_packages: 'java-1.8.0-openjdk'}
      - geerlingguy.jenkins
      

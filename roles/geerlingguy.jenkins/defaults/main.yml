@@ -15,11 +15,35 @@ jenkins_http_port: 8080
 jenkins_jar_location: /opt/jenkins-cli.jar
 jenkins_url_prefix: ""
 jenkins_java_options: "-Djenkins.install.runSetupWizard=false"
-
 jenkins_plugins: []
 jenkins_plugins_state: present
 jenkins_plugin_updates_expiration: 86400
 jenkins_plugin_timeout: 30
+
+jenkins_plugins_recommended: 
+  - ant
+  - antisamy-markup-formatter
+  - build-timeout
+  - cloudbees-folder
+  - credentials-binding
+  - email-ext
+  - ecs
+  - ecr
+  - git
+  - gradle
+  - ldap
+  - mailer
+  - matrix-auth
+  - pam-auth
+  - pipeline-stage-view
+  - ssh-slaves
+  - subversion
+  - timestamper
+  - workflow-aggregator
+  - github-organization-folder
+  - ws-cleanup
+jenkins_admin_users:
+  - 'hudson.security.HudsonPrivateSecurityRealm:admin'
 
 jenkins_admin_username: admin
 jenkins_admin_password: admin
